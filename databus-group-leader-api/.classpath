@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6/"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/3.1/1dc5da3c846caf4ce72111d815afc69b78473a8c/easymock-3.1-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/3.1/3e127311a86fc2e8f550ef8ee4abe094bbcf7e7e/easymock-3.1.jar"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.6.1/7a26b08b265f55622fa1fed3bda68bbd37a465ba/slf4j-log4j12-1.6.1-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.6.1/bd245d6746cdd4e6203e976e21d597a46f115802/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/cglib/cglib-nodep/2.2.2/fc1558bebc50419cdb55fbffd81c290e21f058c1/cglib-nodep-2.2.2-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/cglib/cglib-nodep/2.2.2/d456bb230c70c0b95c76fb28e429d42f275941/cglib-nodep-2.2.2.jar"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.2/71909ee0264af468fe26f0a2467d01bcb85f6fa9/objenesis-1.2-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.2/bfcb0539a071a4c5a30690388903ac48c0667f2a/objenesis-1.2.jar"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/46a386136c901748e6a3af67ebde6c22bc6b4524/slf4j-api-1.6.1-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar"/>
+	<classpathentry sourcepath="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/bf945d1dc995be7fe64923625f842fbb6bf443be/log4j-1.2.16-sources.jar" kind="lib" path="C:/Users/Dhanu_kishore/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar"/>
+</classpath>
