@@ -26,7 +26,7 @@ public class FeedReader implements ItemReader<Customer> {
 	private Random random;
 	
 	/*
-	 * Is called before an item is read
+	 * Is called before an item is read fhy
 	 */
 	@BeforeStep
 	public void setUp() {
