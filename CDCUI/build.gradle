@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-batch:1.1.8.RELEASE'
+    compile 'mysql:mysql-connector-java:5.1.31'
+    compile 'commons-dbcp:commons-dbcp:1.4'
+    compile 'org.apache.avro:avro:1.4.0'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.8.5'
+    compile 'org.codehaus.jackson:jackson-core-asl:1.8.5'
+//    compile 'com.microsoft.jdbcdriver:sqljdbc:4'
+} 
+task copyToLib( type: Copy ) {
+    into "$buildDir/lib"
+    from configurations.runtime
+}
+
+jar { dependsOn copyToLib }

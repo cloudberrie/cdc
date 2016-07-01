@@ -76,7 +76,7 @@ plugins.withType(JavaPlugin) {
 
    // Please see TOOLS-17168, regarding how runtime dependencies can
    // get interpreted as compile time dependency
-   // configurations.compile.exclude module: 'ojdbc6'
+   // configurations.compile.exclude module: 'ojdbc6' try
 
     plugins.apply('eclipse')
     plugins.apply('idea')

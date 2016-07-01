@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:batch="http://www.springframework.org/schema/batch" 
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+	<!-- Configurer that replaces ${...} placeholders with values from a properties file -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+		<property name="ignoreUnresolvablePlaceholders" value="false" />
+		<property name="ignoreResourceNotFound" value="true"/>
+		<property name="fileEncoding" value="UTF-8" />
+		<property name="locations">
+			<list>
+				<!-- 
+					Note: Properties defined in later files will override properties defined earlier files, 
+					in case of overlapping keys. Hence, make sure that the most specific files are the last 
+					ones in the given list of locations.  
+				-->
+				<value>classpath:batch.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Configure log4j.properties -->
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
+		<property name="targetMethod" value="initLogging" />
+		<property name="arguments" value="classpath:log4j.properties" />
+	</bean>
+
+	<!-- In memory JOB Management -->
+	<bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+	
+	<bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
+ 		<property name="transactionManager" ref="transactionManager"/>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+		
+	<!--  Job customer --> 
+	<batch:job id="customerJob" job-repository="jobRepository">
+		<batch:step id="customer">
+			<batch:tasklet>
+				<batch:chunk reader="customerReader" writer="customerWriter" commit-interval="${commit.interval}" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+	<bean id="customerReader" class="de.mb.batch.FeedReader" />
+	<bean id="customerWriter" class="de.mb.batch.DatabaseWriter" />
+
+</beans>
